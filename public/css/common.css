@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(216, 216, 216);
+}
+
+/* Header */
+
+header {
+  background-color: #49c1c5;
+  color: white;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  font-weight: bold;
+  font-size: large;
+}
+
+header div {
+  align-items: center;
+  display: flex;
+}
+
+header p {
+  margin-right: 20px;
+}
+
+header button {
+  border: 0;
+  padding: 0;
+  background-color: #49c1c5;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  header {
+    font-weight: bolder;
+    font-size: medium;
+  }
+  header div {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header p {
+    width: 60%;
+    margin-right: 5px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    font-weight: 100;
+  }
+}
+
+/* Box for error or success action */
+
+.result-box {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 15px;
+}
+
+.error,
+.success {
+  font-size: large;
+  font-weight: bold;
+  padding: 30px 40px 30px 40px;
+  border-radius: 10px;
+  max-width: 60%;
+  overflow-wrap: break-word;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.error::after,
+.success::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border-radius: 10px;
+  animation: shrinkBar 5s linear forwards;
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.error {
+  background-color: rgb(230, 95, 95);
+}
+
+.success {
+  background-color: rgb(90, 248, 90);
+}

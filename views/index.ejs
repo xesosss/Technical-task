@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/common.css" />
+  </head>
+  <body>
+    <header>
+      <label>Admin Panel</label>
+      <div>
+        <p id="admin-name"></p>
+        <button id="log-out">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+            width="25"
+            height="25"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div id="user-modal-window"></div>
+    <div class="result-box"></div>
+    <div class="main-box">
+      <main>
+        <div class="table-setting">
+          <label
+            >Sort by:
+            <select id="sort-field">
+              <option value="username">Username</option>
+              <option value="first_name">First name</option>
+              <option value="birthdate">Birthdate</option>
+            </select>
+          </label>
+          <button class="createNewUser">Create new User</button>
+        </div>
+
+        <div id="user-table"></div>
+      </main>
+      <div id="pagination"></div>
+    </div>
+    <script src="/user.js"></script>
+  </body>
+</html>
